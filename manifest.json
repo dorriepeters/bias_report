@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Bias Report",
+  "version": "1.0",
+  "description": "Scans the page for strong emotional langauge",
+  "background": {
+    "scripts": [
+      "src/jquery-3.4.1.min.js",
+      "src/background.js"
+    ]
+  },
+  "icons": {
+    "128": "icons/biasIcon.png"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/jquery-3.4.1.min.js",
+        "src/content.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icons/biasIcon.png"
+  },
+  "web_accessible_resources": [
+    "src/terms.json"
+  ]
+}
